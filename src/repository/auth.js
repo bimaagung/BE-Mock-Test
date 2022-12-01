@@ -1,7 +1,9 @@
 /* eslint-disable consistent-return */
+const { User } = require('../models');
+
 class AuthRepository {
-  constructor(localDB) {
-    this._localDB = localDB;
+  constructor() {
+    this._User = User;
   }
 
   async addUser(user) {
@@ -9,10 +11,8 @@ class AuthRepository {
     return result;
   }
 
-  async getUserByName(name) {
-    const result = this._localDB.push((data) => {
-      if (data.name === name) return true;
-    });
+  async getUserByPin(pin) {
+    const result = this._User.findOne({ where: { pin } });
     return result;
   }
 }
