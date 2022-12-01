@@ -52,4 +52,24 @@ module.exports = {
       next(error);
     }
   },
+
+  updateTodo: async (req, res, next) => {
+    try {
+      const { id } = req.params;
+      const todo = {
+        title: req.body.title,
+        body: req.body.body,
+      };
+
+      const result = await req.todoUC.updateTodo(id, todo);
+
+      if (!result.isSuccess) {
+        return res.status(result.statusCode).json(resData.failed(result.reason));
+      }
+
+      return res.status(result.statusCode).json(resData.success());
+    } catch (error) {
+      next(error);
+    }
+  },
 };

@@ -70,6 +70,40 @@ class TodoUseCase {
     result.statusCode = 200;
     return result;
   }
+
+  async updateTodo(id, todo) {
+    const result = {
+      isSuccess: false,
+      reason: null,
+      data: null,
+      statusCode: null,
+    };
+
+    const todoById = await this._todoRepository.getTodoById(id);
+
+    if (todoById === null) {
+      result.isSuccess = false;
+      result.reason = 'todo not found';
+      result.statusCode = 404;
+      return result;
+    }
+
+    await this._todoRepository.updateTodo(id, todo);
+
+    const resultTodo = {
+      id: todoById.id,
+      title: todo.title,
+      body: todo.body,
+      userId: todo.userId,
+      createdAt: todoById.createdAt,
+      updatedAt: todoById.updatedAt,
+    };
+
+    result.isSuccess = true;
+    result.statusCode = 200;
+    result.data = resultTodo;
+    return result;
+  }
 }
 
 module.exports = TodoUseCase;

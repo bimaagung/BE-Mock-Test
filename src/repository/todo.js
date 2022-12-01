@@ -35,6 +35,11 @@ class TodoRepository {
     const result = await this._todoModel.destroy({ where: { id } });
     return result;
   }
+
+  async updateTodo(id, todo) {
+    const result = await this._todoModel.update(todo, { where: { id } });
+    return result;
+  }
 }
 
 module.exports = TodoRepository;
