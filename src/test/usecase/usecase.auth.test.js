@@ -11,8 +11,8 @@ describe("auth test", () => {
                 id: 1,
                 name: 'User A',
                 pin: 1234,
-                createAt: Date.now(),
-                updateAt: Date.now()
+                createdAt: Date.now(),
+                updatedAt: Date.now()
             }
             mockUserRepository = {
                 getUserByPin: jest.fn().mockReturnValue(null)
