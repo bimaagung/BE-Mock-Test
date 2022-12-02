@@ -28,8 +28,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-const ACCESS_LOG = process.env.ACCESS_LOG || '../logs/access.log';
-const ERROR_LOG = process.env.ERROR_LOG || '../logs/errors.log';
+const ACCESS_LOG = process.env.ACCESS_LOG || './logs/access.log';
+const ERROR_LOG = process.env.ERROR_LOG || './logs/errors.log';
 
 logger.token('date', (req, res, tz) => moment().tz(tz).format());
 logger.format('custom_format', ':remote-addr - :remote-user [:date[Asia/Jakarta]] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent"');
