@@ -3,6 +3,9 @@ require('dotenv').config();
 const express = require('express');
 const swaggerUI = require('swagger-ui-express');
 const cors = require('cors');
+const moment = require('moment-timezone');
+let logger = require('morgan');
+const fs = require('fs');
 const serverError = require('./middleware/server_error');
 
 const app = express();
@@ -24,6 +27,21 @@ const todoRouter = require('./routes/todo');
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+const ACCESS_LOG = process.env.ACCESS_LOG || '../logs/access.log';
+const ERROR_LOG = process.env.ERROR_LOG || '../logs/errors.log';
+
+logger.token('date', (req, res, tz) => moment().tz(tz).format());
+logger.format('custom_format', ':remote-addr - :remote-user [:date[Asia/Jakarta]] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent"');
+
+app.use(logger('custom_format', {
+  stream: fs.createWriteStream(ACCESS_LOG, { flags: 'a' }),
+}));
+
+app.use(logger('custom_format', {
+  skip(req, res) { return res.statusCode < 400; },
+  stream: fs.createWriteStream(ERROR_LOG, { flags: 'a' }),
+}));
 
 app.use((req, res, next) => {
   req.authUC = authUC;
