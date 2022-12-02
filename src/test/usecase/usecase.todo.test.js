@@ -60,7 +60,7 @@ describe('todo test', () => {
 
             // Assert
             expect(result.isSuccess).toBeTruthy();
-            expect(result.statusCode).toEqual(200);
+            expect(result.statusCode).toEqual(201);
             expect(result.data).toEqual(todo);
             expect(mockTodoRepository.getTodoByTitle).toHaveBeenCalledWith(todo.title, todo.userId);
             expect(mockTodoRepository.createTodo).toHaveBeenCalledWith(

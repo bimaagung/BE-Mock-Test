@@ -50,6 +50,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/', (req, res) => {
+  // #swagger.ignore = true
   res.send('Welcome Backend Mock Test');
 });
 

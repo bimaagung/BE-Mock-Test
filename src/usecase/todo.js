@@ -27,7 +27,7 @@ class TodoUseCase {
 
     result.isSuccess = true;
     result.data = createTodo;
-    result.statusCode = 200;
+    result.statusCode = 201;
     return result;
   }
 

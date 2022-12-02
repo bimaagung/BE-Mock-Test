@@ -17,7 +17,7 @@ class AuthUseCase {
     if (user === null) {
       result.isSuccess = false;
       result.reason = 'account not available';
-      result.statusCode = 404;
+      result.statusCode = 400;
       return result;
     }
 

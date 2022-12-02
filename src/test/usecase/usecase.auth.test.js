@@ -5,7 +5,7 @@ const tokenManager = require('../../helper/tokenManager');
 
 describe("auth test", () => { 
      describe('login test', () => { 
-        test("should isSuccess: false, statusCode: 404, and reason 'account not available'", async () => { 
+        test("should isSuccess: false, statusCode: 400, and reason 'account not available'", async () => { 
             // Arrange 
             const user = {
                 id: 1,
@@ -25,7 +25,7 @@ describe("auth test", () => {
 
             // Assert
             expect(result.isSuccess).toBeFalsy();
-            expect(result.statusCode).toEqual(404);
+            expect(result.statusCode).toEqual(400);
             expect(result.reason).toEqual('account not available');
             expect(mockUserRepository.getUserByPin).toHaveBeenCalledWith(user.pin);
 

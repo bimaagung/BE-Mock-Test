@@ -12,7 +12,7 @@ module.exports = {
         },
         {
           name: 'User B',
-          pin: 1234,
+          pin: 4321,
           createdAt: new Date(),
           updatedAt: new Date(),
         }

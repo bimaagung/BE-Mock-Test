@@ -4,6 +4,42 @@ module.exports = {
   createTodo: async (req, res, next) => {
     /*
       #swagger.tags = ['Todo']
+      #swagger.requestBody = {
+        required: true,
+        schema: { $ref: "#/definitions/bodyTodo" }
+      }
+      #swagger.responses[201] = {
+        description: "Success create todo",
+          content: {
+            "application/json": {
+                schema:{
+                    $ref: "#/definitions/successTodoById"
+                }
+            }
+          }
+      }
+
+      #swagger.responses[400] = {
+        description: "Todo is existing",
+          content: {
+              "application/json": {
+                  schema:{
+                      $ref: "#/definitions/todoExisting"
+                  }
+              }
+          }
+      }
+
+      #swagger.responses[401] = {
+        description: "Unauthorized",
+          content: {
+              "application/json": {
+                  schema:{
+                      $ref: "#/definitions/unauthorized"
+                  }
+              }
+          }
+      }
     */
     try {
       const todo = {
@@ -27,6 +63,27 @@ module.exports = {
   getListTodo: async (req, res, next) => {
     /*
       #swagger.tags = ['Todo']
+      #swagger.responses[200] = {
+        description: "Success get list todo",
+          content: {
+            "application/json": {
+                schema:{
+                    $ref: "#/definitions/successTodoList"
+                }
+            }
+          }
+      }
+
+      #swagger.responses[401] = {
+        description: "Unauthorized",
+          content: {
+              "application/json": {
+                  schema:{
+                      $ref: "#/definitions/unauthorized"
+                  }
+              }
+          }
+      }
     */
     try {
       const userId = req.user.id;
@@ -46,6 +103,38 @@ module.exports = {
   deleteTodo: async (req, res, next) => {
     /*
       #swagger.tags = ['Todo']
+      #swagger.responses[200] = {
+        description: "Success delete todo",
+          content: {
+            "application/json": {
+                schema:{
+                    $ref: "#/definitions/successTodo"
+                }
+            }
+          }
+      }
+
+      #swagger.responses[400] = {
+        description: "Todo not found",
+          content: {
+              "application/json": {
+                  schema:{
+                      $ref: "#/definitions/todoNotFound"
+                  }
+              }
+          }
+      }
+
+      #swagger.responses[401] = {
+        description: "Unauthorized",
+          content: {
+              "application/json": {
+                  schema:{
+                      $ref: "#/definitions/unauthorized"
+                  }
+              }
+          }
+      }
     */
     try {
       const { id } = req.params;
@@ -66,6 +155,42 @@ module.exports = {
   updateTodo: async (req, res, next) => {
     /*
       #swagger.tags = ['Todo']
+      #swagger.requestBody = {
+        required: true,
+        schema: { $ref: "#/definitions/bodyUpdateTodo" }
+      }
+      #swagger.responses[200] = {
+        description: "Success update todo",
+          content: {
+            "application/json": {
+                schema:{
+                    $ref: "#/definitions/successTodoByIdUpdate"
+                }
+            }
+          }
+      }
+
+      #swagger.responses[400] = {
+        description: "Todo not found",
+          content: {
+              "application/json": {
+                  schema:{
+                      $ref: "#/definitions/todoNotFound"
+                  }
+              }
+          }
+      }
+
+      #swagger.responses[401] = {
+        description: "Unauthorized",
+          content: {
+              "application/json": {
+                  schema:{
+                      $ref: "#/definitions/unauthorized"
+                  }
+              }
+          }
+      }
     */
     try {
       const { id } = req.params;
@@ -90,6 +215,38 @@ module.exports = {
   getTodoById: async (req, res, next) => {
     /*
       #swagger.tags = ['Todo']
+      #swagger.responses[200] = {
+        description: "Success get todo by id",
+          content: {
+            "application/json": {
+                schema:{
+                    $ref: "#/definitions/successTodoById"
+                }
+            }
+          }
+      }
+
+      #swagger.responses[400] = {
+        description: "Todo not found",
+          content: {
+              "application/json": {
+                  schema:{
+                      $ref: "#/definitions/todoNotFound"
+                  }
+              }
+          }
+      }
+
+      #swagger.responses[401] = {
+        description: "Unauthorized",
+          content: {
+              "application/json": {
+                  schema:{
+                      $ref: "#/definitions/unauthorized"
+                  }
+              }
+          }
+      }
     */
     try {
       const { id } = req.params;
