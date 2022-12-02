@@ -40,8 +40,9 @@ module.exports = {
   deleteTodo: async (req, res, next) => {
     try {
       const { id } = req.params;
+      const userId = req.user.id;
 
-      const result = await req.todoUC.deleteTodo(id);
+      const result = await req.todoUC.deleteTodo(id, userId);
 
       if (!result.isSuccess) {
         return res.status(result.statusCode).json(resData.failed(result.reason));
@@ -60,14 +61,32 @@ module.exports = {
         title: req.body.title,
         body: req.body.body,
       };
+      const userId = req.user.id;
 
-      const result = await req.todoUC.updateTodo(id, todo);
+      const result = await req.todoUC.updateTodo(id, todo, userId);
 
       if (!result.isSuccess) {
         return res.status(result.statusCode).json(resData.failed(result.reason));
       }
 
       return res.status(result.statusCode).json(resData.success());
+    } catch (error) {
+      next(error);
+    }
+  },
+
+  getTodoById: async (req, res, next) => {
+    try {
+      const { id } = req.params;
+      const userId = req.user.id;
+
+      const result = await req.todoUC.getTodoById(id, userId);
+
+      if (!result.isSuccess) {
+        return res.status(result.statusCode).json(resData.failed(result.reason));
+      }
+
+      return res.status(result.statusCode).json(resData.success(result.data));
     } catch (error) {
       next(error);
     }

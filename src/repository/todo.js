@@ -11,13 +11,13 @@ class TodoRepository {
     return result;
   }
 
-  async getTodoByTitle(title) {
-    const result = await this._todoModel.findOne({ where: { title } });
+  async getTodoByTitle(title, userId) {
+    const result = await this._todoModel.findOne({ where: { title, userId } });
     return result;
   }
 
-  async getTodoById(id) {
-    const result = await this._todoModel.findOne({ where: { id } });
+  async getTodoById(id, userId) {
+    const result = await this._todoModel.findOne({ where: { id, userId } });
     return result;
   }
 

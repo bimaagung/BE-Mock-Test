@@ -14,7 +14,7 @@ class TodoUseCase {
     // Uppercase title todo
     todo.title = todo.title.toUpperCase();
 
-    const todoByName = await this._todoRepository.getTodoByTitle(todo.title);
+    const todoByName = await this._todoRepository.getTodoByTitle(todo.title, todo.userId);
 
     if (todoByName !== null) {
       result.isSuccess = false;
@@ -47,7 +47,7 @@ class TodoUseCase {
     return result;
   }
 
-  async deleteTodo(id) {
+  async deleteTodo(id, userId) {
     const result = {
       isSuccess: false,
       reason: null,
@@ -55,7 +55,7 @@ class TodoUseCase {
       statusCode: null,
     };
 
-    const todoById = await this._todoRepository.getTodoById(id);
+    const todoById = await this._todoRepository.getTodoById(id, userId);
 
     if (todoById === null) {
       result.isSuccess = false;
@@ -71,7 +71,7 @@ class TodoUseCase {
     return result;
   }
 
-  async updateTodo(id, todo) {
+  async updateTodo(id, todo, userId) {
     const result = {
       isSuccess: false,
       reason: null,
@@ -79,7 +79,7 @@ class TodoUseCase {
       statusCode: null,
     };
 
-    const todoById = await this._todoRepository.getTodoById(id);
+    const todoById = await this._todoRepository.getTodoById(id, userId);
 
     if (todoById === null) {
       result.isSuccess = false;
@@ -94,7 +94,7 @@ class TodoUseCase {
       id: todoById.id,
       title: todo.title,
       body: todo.body,
-      userId: todo.userId,
+      userId,
       createdAt: todoById.createdAt,
       updatedAt: todoById.updatedAt,
     };
@@ -102,6 +102,29 @@ class TodoUseCase {
     result.isSuccess = true;
     result.statusCode = 200;
     result.data = resultTodo;
+    return result;
+  }
+
+  async getTodoById(id, userId) {
+    const result = {
+      isSuccess: false,
+      reason: null,
+      data: null,
+      statusCode: null,
+    };
+
+    const todo = await this._todoRepository.getTodoById(id, userId);
+
+    if (todo === null) {
+      result.isSuccess = false;
+      result.reason = 'todo not found';
+      result.statusCode = 404;
+      return result;
+    }
+
+    result.isSuccess = true;
+    result.statusCode = 200;
+    result.data = todo;
     return result;
   }
 }
