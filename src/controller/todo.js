@@ -2,6 +2,9 @@ const resData = require('../helper/reponse');
 
 module.exports = {
   createTodo: async (req, res, next) => {
+    /*
+      #swagger.tags = ['Todo']
+    */
     try {
       const todo = {
         title: req.body.title,
@@ -22,6 +25,9 @@ module.exports = {
   },
 
   getListTodo: async (req, res, next) => {
+    /*
+      #swagger.tags = ['Todo']
+    */
     try {
       const userId = req.user.id;
 
@@ -38,6 +44,9 @@ module.exports = {
   },
 
   deleteTodo: async (req, res, next) => {
+    /*
+      #swagger.tags = ['Todo']
+    */
     try {
       const { id } = req.params;
       const userId = req.user.id;
@@ -55,6 +64,9 @@ module.exports = {
   },
 
   updateTodo: async (req, res, next) => {
+    /*
+      #swagger.tags = ['Todo']
+    */
     try {
       const { id } = req.params;
       const todo = {
@@ -76,6 +88,9 @@ module.exports = {
   },
 
   getTodoById: async (req, res, next) => {
+    /*
+      #swagger.tags = ['Todo']
+    */
     try {
       const { id } = req.params;
       const userId = req.user.id;

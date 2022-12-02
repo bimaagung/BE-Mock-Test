@@ -2,6 +2,9 @@ const resData = require('../helper/reponse');
 
 module.exports = {
   login: async (req, res, next) => {
+    /*
+      #swagger.tags = ['Auth']
+    */
     try {
       const { pin } = req.body;
 

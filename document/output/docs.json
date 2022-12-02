@@ -28,6 +28,9 @@
     },
     "/api/auth/login": {
       "post": {
+        "tags": [
+          "Auth"
+        ],
         "description": "",
         "parameters": [],
         "responses": {},
@@ -49,6 +52,9 @@
     },
     "/api/todo/create": {
       "post": {
+        "tags": [
+          "Todo"
+        ],
         "description": "",
         "parameters": [
           {
@@ -90,6 +96,9 @@
     },
     "/api/todo/list": {
       "get": {
+        "tags": [
+          "Todo"
+        ],
         "description": "",
         "parameters": [
           {
@@ -114,6 +123,9 @@
     },
     "/api/todo/{id}": {
       "get": {
+        "tags": [
+          "Todo"
+        ],
         "description": "",
         "parameters": [
           {
@@ -146,6 +158,9 @@
     },
     "/api/todo/delete/{id}": {
       "delete": {
+        "tags": [
+          "Todo"
+        ],
         "description": "",
         "parameters": [
           {
@@ -178,6 +193,9 @@
     },
     "/api/todo/update/{id}": {
       "put": {
+        "tags": [
+          "Todo"
+        ],
         "description": "",
         "parameters": [
           {
