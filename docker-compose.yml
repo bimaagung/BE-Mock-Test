@@ -12,7 +12,10 @@ services:
     - backed-test
 
   todo_app:
-    build: .
+    build: 
+      context: .
+    depends_on:
+      - postgres
     environment: 
       APP_NAME: TODO
       VERSION: 1.0.0
@@ -32,8 +35,7 @@ services:
       - '5000'
     networks:
     - backed-test
-    depends_on:
-      - postgres
+    
 
 networks:
   backed-test:
