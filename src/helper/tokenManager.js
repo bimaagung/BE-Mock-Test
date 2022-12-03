@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const generateToken = (user) => {
   const acceessToken = jwt.sign(
     user,
-    process.env.ACCESS_TOKEN_KEY,
+    process.env.ACCESS_TOKEN_KEY || 'secret',
     {
       expiresIn: process.env.ACCESS_TOKEN_AGE,
     },

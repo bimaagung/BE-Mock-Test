@@ -35,7 +35,7 @@ const authorized = (req, res, next) => {
   let payload;
 
   try {
-    payload = jwt.verify(token, process.env.ACCESS_TOKEN_KEY);
+    payload = jwt.verify(token, process.env.ACCESS_TOKEN_KEY || 'secret');
   } catch (err) {
     console.log(err);
     return res.status(401).json(resData.failed('unauthorized'));
