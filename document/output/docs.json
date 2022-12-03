@@ -20,7 +20,7 @@
         "tags": [
           "Auth"
         ],
-        "description": "",
+        "description": "Pin login for user A : 1234 & user B : 4321",
         "parameters": [],
         "responses": {
           "200": {

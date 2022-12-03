@@ -4,6 +4,7 @@ module.exports = {
   login: async (req, res, next) => {
     /*
       #swagger.tags = ['Auth']
+      #swagger.description = 'Pin login for user A  : 1234 & user B : 4321'
       #swagger.requestBody = {
         required: true,
         schema: { $ref: "#/definitions/bodyLogin" }
