@@ -43,7 +43,7 @@ Link url access swagger :
 
 clone project
 ``` bson
-git clone https://github.com/bimaagung/be-mock-test.git
+git clone https://github.com/bimaagung/todo-backend-mock-test.git
 ```
 
 add node modules 
