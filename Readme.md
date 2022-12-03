@@ -85,7 +85,7 @@ sequelize db:migrate
 
 fill the table with dummy data 
 ```bson
-sequelize db:migrate:all
+sequelize db:seed:all
 ```
 
 open app in browser
