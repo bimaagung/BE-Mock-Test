@@ -1,3 +1,4 @@
+require('dotenv').config();
 const swaggerAutogen = require('swagger-autogen')({ openapi: '3.0.0' });
 
 const authSchemaReq = require('../document/schema/request/auth')
@@ -14,7 +15,7 @@ const doc = {
       email: 'bimaagungsetya@gmail.com',
     },
   },
-  host: 'http://ec2-54-169-152-98.ap-southeast-1.compute.amazonaws.com:5000',
+  host: `${process.env.HOST_ORIGIN}:${process.env.PORT}`,
   schemes: ['http'],
   securityDefinitions: {
     bearerAuth: {
