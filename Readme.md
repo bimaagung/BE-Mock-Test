@@ -126,6 +126,43 @@ localhost:5000/docs
 
 <br>
 
+<br>
+
+## 📁 Project Structure
+
+```
+    ├───.github
+    │   └───workflows
+    ├───document
+    │   ├───output
+    │   └───schema
+    │       ├───request
+    │       └───response
+    ├───logs
+    └───src
+        ├───config
+        ├───controller
+        ├───database
+        │   ├───migrations
+        │   └───seeders
+        ├───helper
+        ├───middleware
+        │   ├───authorization
+        │   ├───server_error
+        │   └───validator
+        │       ├───auth
+        │       └───todo
+        ├───models
+        ├───repository
+        ├───routes
+        ├───test
+        │   ├───mock
+        │   └───usecase
+        └───usecase
+```
+
+<br>
+
 
 ## 💻 Built with
 
