@@ -4,7 +4,7 @@
 ### - What is JSON:
 > JSON (Javascript Object Notation) is a format using for save data and process data exchange between server and client
 ### - Explain how the REST API works :
-> REST API works as a bridge between server and client by way of data transfer usually using the HTTP protocol
+> REST API works as a bridge between server and client by way of data transfer and as a guide and rules in communication common using the HTTP protocol, http itself has common methods such as GET, POST, PUT, DELETE
 
 <br>
 
