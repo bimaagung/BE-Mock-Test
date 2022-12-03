@@ -14,7 +14,7 @@ const doc = {
       email: 'bimaagungsetya@gmail.com',
     },
   },
-  host: '54.169.152.98/:5000',
+  host: 'localhost/:5000',
   schemes: ['http'],
   securityDefinitions: {
     bearerAuth: {
