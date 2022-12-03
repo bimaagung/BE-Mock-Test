@@ -112,4 +112,6 @@ localhost:5000/docs
 - Node JS
 - Express JS
 - Postgres
+- Joi Validation
+- JWT Auth
 - Swagger
