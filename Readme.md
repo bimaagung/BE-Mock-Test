@@ -8,6 +8,16 @@
 
 <br>
 
+## 🔍 Entity Relationship Diagram
+
+<div align="center">
+  
+  <img src="https://raw.githubusercontent.com/bimaagung/be-mock-test/master/erd.png" width="400">
+
+</div>
+
+<br>
+
 ## 🚀 Demo API Todo Deploy
 Host:
 
@@ -18,6 +28,13 @@ Link url access swagger :
 <br>
 [![View in Swagger](http://jessemillar.github.io/view-in-swagger-button/button.svg)](http://ec2-54-169-152-98.ap-southeast-1.compute.amazonaws.com:5000/docs)
 
+<br>
+
+<div align="center">
+  
+  <img src="https://raw.githubusercontent.com/bimaagung/be-mock-test/master/swagger.png" width="800">
+
+</div>
 <br>
 
 ## 🛠️ Installation Steps
@@ -115,3 +132,6 @@ localhost:5000/docs
 - Joi Validation
 - JWT Auth
 - Swagger
+
+
+
