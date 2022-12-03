@@ -9,11 +9,6 @@
     },
     "version": "1.0.0"
   },
-  "servers": [
-    {
-      "url": "http://localhost/:5000/"
-    }
-  ],
   "paths": {
     "/api/auth/login": {
       "post": {

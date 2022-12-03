@@ -25,7 +25,7 @@ const authRouter = require('./routes/auth');
 const todoRouter = require('./routes/todo');
 
 app.use(cors({
-  origin: '*',
+  origin: 'http://ec2-54-169-152-98.ap-southeast-1.compute.amazonaws.com:5000',
 }));
 
 app.use(express.json());
