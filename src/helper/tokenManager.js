@@ -5,7 +5,7 @@ const generateToken = (user) => {
     user,
     process.env.ACCESS_TOKEN_KEY || 'secret',
     {
-      expiresIn: process.env.ACCESS_TOKEN_AGE,
+      expiresIn: process.env.ACCESS_TOKEN_AGE || '1h',
     },
   );
 
