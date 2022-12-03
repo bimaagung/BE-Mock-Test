@@ -8,7 +8,7 @@
 
 <br>
 
-## 🌐 Access API Todo deploy
+## 🚀 Access API Todo Deploy
 Host:
 
 ```http://ec2-54-169-152-98.ap-southeast-1.compute.amazonaws.com:5000```
@@ -22,7 +22,7 @@ Link url access swagger :
 
 ## 🛠️ Installation Steps
 
-Installation project
+### Installation project
 
 clone project
 ``` bson
@@ -65,7 +65,7 @@ localhost:5000
 ```
 
 
-Installation project with docker
+### 🐳Installation project with docker
 
 run docker compose in folder project
 ``` bson
@@ -95,7 +95,7 @@ localhost:5000
 
 <br>
 
-## 🚀 Demo
+## 🚀 Demo On Local
 
 test each endpoint in swagger
 
