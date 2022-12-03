@@ -1,5 +1,11 @@
 [![node.js version](https://badgen.net/npm/node/express)](https://npmjs.com/package/express)
 
+## 🛠️ Access api todo with swagger
+access url:  
+```bson 
+http://ec2-54-169-152-98.ap-southeast-1.compute.amazonaws.com:5000/docs
+```
+
 ## 🛠️ Installation Steps
 
 Installation project
