@@ -35,7 +35,7 @@ module.exports = {
 
       const result = await req.authUC.login(pin);
 
-      if (!result) {
+      if (!result.isSuccess) {
         return res.status(result.statusCode).json(resData.failed(result.reason));
       }
 
