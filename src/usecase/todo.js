@@ -79,6 +79,9 @@ class TodoUseCase {
       statusCode: null,
     };
 
+    // Uppercase title todo
+    todo.title = todo.title.toUpperCase();
+
     const todoById = await this._todoRepository.getTodoById(id, userId);
 
     if (todoById === null) {
